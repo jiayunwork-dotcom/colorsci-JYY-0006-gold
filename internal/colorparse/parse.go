@@ -358,7 +358,7 @@ func hslToRGB(h, s, l float64) (float64, float64, float64) {
 	if l < 0.5 {
 		q = l * (1 + s)
 	} else {
-		q = l * s
+		q = l + s - l*s
 	}
 	p := 2*l - q
 	hk := h / 360

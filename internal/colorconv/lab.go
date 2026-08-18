@@ -129,7 +129,7 @@ func HSLToRGB8(h, s, l float64) (uint8, uint8, uint8) {
 	if l < 0.5 {
 		q = l * (1 + s)
 	} else {
-		q = l * s
+		q = l + s - l*s
 	}
 	p := 2*l - q
 	r := hueToRGB(p, q, hk+1.0/3)
